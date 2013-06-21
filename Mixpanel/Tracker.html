@@ -146,6 +146,9 @@ Mixpanel::Tracker.track(a_distinct_id, an_event_name, { properties })</pre>
 <pre>tracker = Mixpanel::Tracker.new(YOUR_MIXPANEL_TOKEN)
 tracker.people.set(a_distinct_id, { properties })</pre>
 
+<p>You can find your project token in the settings dialog for your project,
+inside of the <a href="../Mixpanel.html">Mixpanel</a> web application.</p>
+
 <p><a href="Tracker.html">Mixpanel::Tracker</a> is a subclass of <a
 href="Events.html">Mixpanel::Events</a>, and exposes an instance of <a
 href="People.html">Mixpanel::People</a> as <a
@@ -234,7 +237,7 @@ href="BufferedConsumer.html#method-i-send">Mixpanel::BufferedConsumer#send</a></
             
             <div class="method-source-code" id="new-source">
 <pre>
-<span class="ruby-comment"># File lib/mixpanel-ruby/tracker.rb, line 42</span>
+<span class="ruby-comment"># File lib/mixpanel-ruby/tracker.rb, line 45</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">token</span>, &amp;<span class="ruby-identifier">block</span>)
   <span class="ruby-keyword">super</span>(<span class="ruby-identifier">token</span>, &amp;<span class="ruby-identifier">block</span>)
   <span class="ruby-ivar">@token</span> = <span class="ruby-identifier">token</span>
@@ -283,7 +286,7 @@ service, regardless of how the tracker is configured.</p>
             
             <div class="method-source-code" id="alias-source">
 <pre>
-<span class="ruby-comment"># File lib/mixpanel-ruby/tracker.rb, line 81</span>
+<span class="ruby-comment"># File lib/mixpanel-ruby/tracker.rb, line 85</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">alias</span>(<span class="ruby-identifier">alias_id</span>, <span class="ruby-identifier">real_id</span>, <span class="ruby-identifier">events_endpoint</span>=<span class="ruby-keyword">nil</span>)
   <span class="ruby-identifier">consumer</span> = <span class="ruby-constant">Mixpanel</span><span class="ruby-operator">::</span><span class="ruby-constant">Consumer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">events_endpoint</span>)
   <span class="ruby-identifier">message</span> = {
@@ -318,11 +321,12 @@ service, regardless of how the tracker is configured.</p>
 
           <div class="method-description">
             
-            <p>Notes that an event has occurred, along with a distinct_id representing the
-source of that event (for example, a user id), an event name describing the
-event and a set of properties describing that event. Properties are
-provided as a Hash with string keys and strings, numbers or booleans as
-values.</p>
+            <p>A call to <a href="Tracker.html#method-i-track">track</a> is a report that
+an event has occurred.  <a href="Tracker.html#method-i-track">track</a>
+takes a distinct_id representing the source of that event (for example, a
+user id), an event name describing the event, and a set of properties
+describing that event. Properties are provided as a Hash with string keys
+and strings, numbers or booleans as values.</p>
 
 <pre>tracker = Mixpanel::Tracker.new
 
@@ -340,7 +344,7 @@ tracker.track(&quot;12345&quot;, &quot;Welcome Email Sent&quot;, {
             
             <div class="method-source-code" id="track-source">
 <pre>
-<span class="ruby-comment"># File lib/mixpanel-ruby/tracker.rb, line 65</span>
+<span class="ruby-comment"># File lib/mixpanel-ruby/tracker.rb, line 69</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">track</span>(<span class="ruby-identifier">distinct_id</span>, <span class="ruby-identifier">event</span>, <span class="ruby-identifier">properties</span>={}, <span class="ruby-identifier">ip</span>=<span class="ruby-keyword">nil</span>)
   <span class="ruby-comment"># This is here strictly to allow rdoc to include the relevant</span>
   <span class="ruby-comment"># documentation</span>

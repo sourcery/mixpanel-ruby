@@ -166,7 +166,7 @@ and sending them to the consumer. You will rarely need to instantiate this
 class directly- to send profile updates, use <a
 href="Tracker.html#attribute-i-people">Mixpanel::Tracker#people</a></p>
 
-<pre>tracker = Mixpanel::Tracker.new
+<pre>tracker = Mixpanel::Tracker.new(YOUR_MIXPANEL_TOKEN)
 tracker.people.set(...) # Or .append(..), or track_charge(...) etc.</pre>
 
     </div><!-- description -->
@@ -302,8 +302,7 @@ tracker.people.append(&quot;12345&quot;, {
 
           <div class="method-description">
             
-            <p>Clear all charges from a <a href="../Mixpanel.html">Mixpanel</a> people
-profile</p>
+            <p>Clear all charges from a Mixpanel people profile</p>
             
 
             
@@ -336,8 +335,7 @@ profile</p>
 
           <div class="method-description">
             
-            <p>Permanently delete a profile from <a href="../Mixpanel.html">Mixpanel</a>
-people analytics</p>
+            <p>Permanently delete a profile from Mixpanel people analytics</p>
             
 
             
@@ -374,10 +372,9 @@ people analytics</p>
           <div class="method-description">
             
             <p>Changes the value of properties by a numeric amount.  Takes a hash with
-string keys and numeric properties.  <a
-href="../Mixpanel.html">Mixpanel</a> will add the given amount to whatever
-value is currently assigned to the property. If no property exists with a
-given name, the value will be added to zero.</p>
+string keys and numeric properties. Mixpanel will add the given amount to
+whatever value is currently assigned to the property. If no property exists
+with a given name, the value will be added to zero.</p>
 
 <pre>tracker = Mixpanel::Tracker.new
 tracker.people.set(&quot;12345&quot;, {
@@ -437,8 +434,8 @@ tracker.people.set(&quot;1234&quot;, {
     'Sign-Up Date' =&gt; DateTime.now
 });</pre>
 
-<p>If you provide an ip argument, <a href="../Mixpanel.html">Mixpanel</a> will
-use that ip address for geolocation (rather than the ip of your server)</p>
+<p>If you provide an ip argument, Mixpanel will use that ip address for
+geolocation (rather than the ip of your server)</p>
             
 
             
@@ -535,7 +532,7 @@ tracker.people.set(&quot;12345&quot;, {
             
             <p>Records a payment to you to a profile. Charges recorded with <a
 href="People.html#method-i-track_charge">track_charge</a> will appear in
-the <a href="../Mixpanel.html">Mixpanel</a> revenue report.</p>
+the Mixpanel revenue report.</p>
 
 <pre>tracker = Mixpanel::Tracker.new
 
@@ -668,19 +665,19 @@ tracker.people.unset(&quot;12345&quot;, &quot;Overdue Since&quot;)</pre>
 
           <div class="method-description">
             
-            <p>Send a generic update to <a href="../Mixpanel.html">Mixpanel</a> people
-analytics. Caller is responsible for formatting the update, as documented
-in the <a href="../Mixpanel.html">Mixpanel</a> HTTP specification. This
-method might be useful if you want to use very new or experimental features
-of people analytics from Ruby The <a href="../Mixpanel.html">Mixpanel</a>
-HTTP tracking API is documented at <a
+            <p>Send a generic update to Mixpanel people analytics. Caller is responsible
+for formatting the update message, as documented in the Mixpanel HTTP
+specification, and passing the message as a dict to <a
+href="People.html#method-i-update">update</a>. This method might be useful
+if you want to use very new or experimental features of people analytics
+from Ruby The Mixpanel HTTP tracking API is documented at <a
 href="http://joe.dev.mixpanel.org/help/reference/http">joe.dev.mixpanel.org/help/reference/http</a></p>
             
 
             
             <div class="method-source-code" id="update-source">
 <pre>
-<span class="ruby-comment"># File lib/mixpanel-ruby/people.rb, line 208</span>
+<span class="ruby-comment"># File lib/mixpanel-ruby/people.rb, line 209</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">update</span>(<span class="ruby-identifier">message</span>)
   <span class="ruby-identifier">message</span> = {
       <span class="ruby-string">'$token'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@token</span>,

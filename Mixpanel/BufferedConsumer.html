@@ -203,13 +203,22 @@ end</pre>
 
           <div class="method-description">
             
-            
+            <p>Create a <a href="BufferedConsumer.html">Mixpanel::BufferedConsumer</a>. If
+you provide endpoint arguments, they will be used instead of the default <a
+href="../Mixpanel.html">Mixpanel</a> endpoints. This can be useful for
+proxying, debugging, or if you prefer not to use SSL for your events.</p>
+
+<p>You can also change the preferred buffer size before the consumer
+automatically sends its buffered events. The <a
+href="../Mixpanel.html">Mixpanel</a> endpoints have a limit of 50 events
+per HTTP request, but you can lower the limit if your individual events are
+very large.</p>
             
 
             
             <div class="method-source-code" id="new-source">
 <pre>
-<span class="ruby-comment"># File lib/mixpanel-ruby/consumer.rb, line 109</span>
+<span class="ruby-comment"># File lib/mixpanel-ruby/consumer.rb, line 127</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">events_endpoint</span>=<span class="ruby-keyword">nil</span>, <span class="ruby-identifier">update_endpoint</span>=<span class="ruby-keyword">nil</span>, <span class="ruby-identifier">max_buffer_length</span>=<span class="ruby-constant">MAX_LENGTH</span>)
   <span class="ruby-ivar">@max_length</span> = [ <span class="ruby-identifier">max_buffer_length</span>, <span class="ruby-constant">MAX_LENGTH</span> ].<span class="ruby-identifier">min</span>
   <span class="ruby-ivar">@consumer</span> = <span class="ruby-constant">Consumer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">events_endpoint</span>, <span class="ruby-identifier">update_endpoint</span>)
@@ -256,7 +265,7 @@ application exits or messages may not be sent.</p>
             
             <div class="method-source-code" id="flush-source">
 <pre>
-<span class="ruby-comment"># File lib/mixpanel-ruby/consumer.rb, line 132</span>
+<span class="ruby-comment"># File lib/mixpanel-ruby/consumer.rb, line 150</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">flush</span>
   <span class="ruby-ivar">@buffers</span>.<span class="ruby-identifier">keys</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">k</span><span class="ruby-operator">|</span> <span class="ruby-identifier">flush_type</span>(<span class="ruby-identifier">k</span>) }
 <span class="ruby-keyword">end</span></pre>
@@ -291,7 +300,7 @@ automatically. Flushes are synchronous when they occur.</p>
             
             <div class="method-source-code" id="send-source">
 <pre>
-<span class="ruby-comment"># File lib/mixpanel-ruby/consumer.rb, line 121</span>
+<span class="ruby-comment"># File lib/mixpanel-ruby/consumer.rb, line 139</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">send</span>(<span class="ruby-identifier">type</span>, <span class="ruby-identifier">message</span>)
   <span class="ruby-identifier">type</span> = <span class="ruby-identifier">type</span>.<span class="ruby-identifier">to_sym</span>
   <span class="ruby-ivar">@buffers</span>[<span class="ruby-identifier">type</span>] <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">message</span>
