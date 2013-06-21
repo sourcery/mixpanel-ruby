@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+  <meta content="text/html; charset=ISO-8859-1" http-equiv="Content-Type" />
+
+  <title>RDoc Documentation</title>
+
+  <link type="text/css" media="screen" href="rdoc.css" rel="stylesheet" />
+
+  <script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/darkfish.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+<body class="indexpage">
+
+  
+  <h1>RDoc Documentation</h1>
+
+  
+  <div id="main">
+    
+
+<p>mixpanel-ruby is a library for tracking events and sending Mixpanel profile
+updates to Mixpanel from your ruby applications. It's straightforward to
+get started sending your first events and updates:</p>
+
+<h2>Installation</h2>
+
+<pre>gem install mixpanel-ruby</pre>
+
+<h2>Getting Started</h2>
+
+<pre>require 'mixpanel-ruby'
+
+tracker = Mixpanel::Tracker.new(YOUR_TOKEN)
+
+# Track an event on behalf of user &quot;User1&quot;
+tracker.track('User1', 'A Mixpanel Event')
+
+# Send an update to User1's profile
+tracker.people.set('User1', {
+    '$first_name' =&gt; 'David',
+    '$last_name' =&gt; 'Bowie',
+    'Best Album' =&gt; 'The Rise and Fall of Ziggy Stardust and the Spiders from Mars'
+})</pre>
+
+<p>The primary class you will use to track events is <a
+href="Mixpanel/Tracker.html">Mixpanel::Tracker</a>. An instance of <a
+href="Mixpanel/Tracker.html">Mixpanel::Tracker</a> is enough to send events
+directly to Mixpanel, and get you integrated right away.</p>
+
+  </div>
+  
+
+  
+  
+  <h2>Files</h2>
+  <ul>
+    
+      <li class="file"><a href="Readme_rdoc.html">Readme.rdoc</a></li>
+    
+  </ul>
+  
+
+  <h2 id="classes">Classes/Modules</h2>
+  <ul>
+    
+    <li class="module"><a href="Mixpanel.html">Mixpanel</a></li>
+    
+    <li class="class"><a href="Mixpanel/BufferedConsumer.html">Mixpanel::BufferedConsumer</a></li>
+    
+    <li class="class"><a href="Mixpanel/ConnectionError.html">Mixpanel::ConnectionError</a></li>
+    
+    <li class="class"><a href="Mixpanel/Consumer.html">Mixpanel::Consumer</a></li>
+    
+    <li class="class"><a href="Mixpanel/Events.html">Mixpanel::Events</a></li>
+    
+    <li class="class"><a href="Mixpanel/People.html">Mixpanel::People</a></li>
+    
+    <li class="class"><a href="Mixpanel/People/PeopleDate.html">Mixpanel::People::PeopleDate</a></li>
+    
+    <li class="class"><a href="Mixpanel/Tracker.html">Mixpanel::Tracker</a></li>
+    
+  </ul>
+
+  <h2 id="methods">Methods</h2>
+  <ul>
+    
+      <li><a href="Mixpanel/People/PeopleDate.html#method-c-asPeopleDate">::asPeopleDate &mdash; Mixpanel::People::PeopleDate</a></li>
+    
+      <li><a href="Mixpanel.html#method-c-config_http">::config_http &mdash; Mixpanel</a></li>
+    
+      <li><a href="Mixpanel/BufferedConsumer.html#method-c-new">::new &mdash; Mixpanel::BufferedConsumer</a></li>
+    
+      <li><a href="Mixpanel/Tracker.html#method-c-new">::new &mdash; Mixpanel::Tracker</a></li>
+    
+      <li><a href="Mixpanel/People/PeopleDate.html#method-c-new">::new &mdash; Mixpanel::People::PeopleDate</a></li>
+    
+      <li><a href="Mixpanel/Events.html#method-c-new">::new &mdash; Mixpanel::Events</a></li>
+    
+      <li><a href="Mixpanel/People.html#method-c-new">::new &mdash; Mixpanel::People</a></li>
+    
+      <li><a href="Mixpanel/Consumer.html#method-c-new">::new &mdash; Mixpanel::Consumer</a></li>
+    
+      <li><a href="Mixpanel/Tracker.html#method-i-alias">#alias &mdash; Mixpanel::Tracker</a></li>
+    
+      <li><a href="Mixpanel/People.html#method-i-append">#append &mdash; Mixpanel::People</a></li>
+    
+      <li><a href="Mixpanel/People.html#method-i-clear_charges">#clear_charges &mdash; Mixpanel::People</a></li>
+    
+      <li><a href="Mixpanel/People.html#method-i-delete_user">#delete_user &mdash; Mixpanel::People</a></li>
+    
+      <li><a href="Mixpanel/BufferedConsumer.html#method-i-flush">#flush &mdash; Mixpanel::BufferedConsumer</a></li>
+    
+      <li><a href="Mixpanel/People.html#method-i-increment">#increment &mdash; Mixpanel::People</a></li>
+    
+      <li><a href="Mixpanel/BufferedConsumer.html#method-i-send">#send &mdash; Mixpanel::BufferedConsumer</a></li>
+    
+      <li><a href="Mixpanel/Consumer.html#method-i-send">#send &mdash; Mixpanel::Consumer</a></li>
+    
+      <li><a href="Mixpanel/People.html#method-i-set">#set &mdash; Mixpanel::People</a></li>
+    
+      <li><a href="Mixpanel/People.html#method-i-set_once">#set_once &mdash; Mixpanel::People</a></li>
+    
+      <li><a href="Mixpanel/People/PeopleDate.html#method-i-to_json">#to_json &mdash; Mixpanel::People::PeopleDate</a></li>
+    
+      <li><a href="Mixpanel/Events.html#method-i-track">#track &mdash; Mixpanel::Events</a></li>
+    
+      <li><a href="Mixpanel/People.html#method-i-track_charge">#track_charge &mdash; Mixpanel::People</a></li>
+    
+      <li><a href="Mixpanel/People.html#method-i-union">#union &mdash; Mixpanel::People</a></li>
+    
+      <li><a href="Mixpanel/People.html#method-i-unset">#unset &mdash; Mixpanel::People</a></li>
+    
+      <li><a href="Mixpanel/People.html#method-i-update">#update &mdash; Mixpanel::People</a></li>
+    
+  </ul>
+
+  <div id="validator-badges">
+    <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+    <p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+      Rdoc Generator</a> 2</small>.</p>
+  </div>
+</body>
+</html>

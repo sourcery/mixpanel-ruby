@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta content="text/html; charset=ISO-8859-1" http-equiv="Content-Type" />
+
+  <title>File: Readme.rdoc [RDoc Documentation]</title>
+
+  <link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet" />
+
+  <script src="./js/jquery.js" type="text/javascript"
+    charset="utf-8"></script>
+  <script src="./js/thickbox-compressed.js" type="text/javascript"
+    charset="utf-8"></script>
+  <script src="./js/quicksearch.js" type="text/javascript"
+    charset="utf-8"></script>
+  <script src="./js/darkfish.js" type="text/javascript"
+    charset="utf-8"></script>
+</head>
+
+<body class="file">
+  <div id="metadata">
+    <div id="home-metadata">
+      <div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="./index.html">Home</a>
+          <a href="./index.html#classes">Classes</a>
+          <a href="./index.html#methods">Methods</a>
+        </h3>
+      </div>
+    </div>
+
+    <div id="project-metadata">
+      
+      
+      <div id="fileindex-section" class="section project-section">
+        <h3 class="section-header">Files</h3>
+        <ul>
+        
+          <li class="file"><a href="./Readme_rdoc.html">Readme.rdoc</a></li>
+        
+        </ul>
+      </div>
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class Index
+          <span class="search-toggle"><img src="./images/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <ul class="link-list">
+        
+          <li><a href="./Mixpanel.html">Mixpanel</a></li>
+        
+          <li><a href="./Mixpanel/BufferedConsumer.html">Mixpanel::BufferedConsumer</a></li>
+        
+          <li><a href="./Mixpanel/ConnectionError.html">Mixpanel::ConnectionError</a></li>
+        
+          <li><a href="./Mixpanel/Consumer.html">Mixpanel::Consumer</a></li>
+        
+          <li><a href="./Mixpanel/Events.html">Mixpanel::Events</a></li>
+        
+          <li><a href="./Mixpanel/People.html">Mixpanel::People</a></li>
+        
+          <li><a href="./Mixpanel/People/PeopleDate.html">Mixpanel::People::PeopleDate</a></li>
+        
+          <li><a href="./Mixpanel/Tracker.html">Mixpanel::Tracker</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+
+      
+    </div>
+  </div>
+
+  <div id="documentation">
+    
+<h1>mixpanel-ruby: The official <a href="Mixpanel.html">Mixpanel</a> Ruby library</h1>
+
+<p>mixpanel-ruby is a library for tracking events and sending Mixpanel profile
+updates to Mixpanel from your ruby applications. It's straightforward to
+get started sending your first events and updates:</p>
+
+<h2>Installation</h2>
+
+<pre>gem install mixpanel-ruby</pre>
+
+<h2>Getting Started</h2>
+
+<pre>require 'mixpanel-ruby'
+
+tracker = Mixpanel::Tracker.new(YOUR_TOKEN)
+
+# Track an event on behalf of user &quot;User1&quot;
+tracker.track('User1', 'A Mixpanel Event')
+
+# Send an update to User1's profile
+tracker.people.set('User1', {
+    '$first_name' =&gt; 'David',
+    '$last_name' =&gt; 'Bowie',
+    'Best Album' =&gt; 'The Rise and Fall of Ziggy Stardust and the Spiders from Mars'
+})</pre>
+
+<p>The primary class you will use to track events is <a
+href="Mixpanel/Tracker.html">Mixpanel::Tracker</a>. An instance of <a
+href="Mixpanel/Tracker.html">Mixpanel::Tracker</a> is enough to send events
+directly to Mixpanel, and get you integrated right away.</p>
+
+  </div>
+
+  <div id="validator-badges">
+    <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+    <p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+      Rdoc Generator</a> 2</small>.</p>
+  </div>
+</body>
+</html>
+

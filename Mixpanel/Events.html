@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta content="text/html; charset=ISO-8859-1" http-equiv="Content-Type" />
+
+  <title>Class: Mixpanel::Events</title>
+
+  <link rel="stylesheet" href="../rdoc.css" type="text/css" media="screen" />
+
+  <script src="../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/darkfish.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+<body id="top" class="class">
+
+  <div id="metadata">
+    <div id="home-metadata">
+      <div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../index.html">Home</a>
+          <a href="../index.html#classes">Classes</a>
+          <a href="../index.html#methods">Methods</a>
+        </h3>
+      </div>
+    </div>
+
+    <div id="file-metadata">
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul>
+          
+            <li><a href="../lib/mixpanel-ruby/events_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/mixpanel-ruby/events.rb">lib/mixpanel-ruby/events.rb</a></li>
+          
+          </ul>
+        </div>
+      </div>
+
+      
+    </div>
+
+    <div id="class-metadata">
+      
+      <!-- Parent Class -->
+      <div id="parent-class-section" class="section">
+        <h3 class="section-header">Parent</h3>
+        
+        <p class="link">Object</p>
+        
+      </div>
+      
+
+      
+
+      
+
+      
+      <!-- Method Quickref -->
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+          <li><a href="#method-c-new">::new</a></li>
+          
+          <li><a href="#method-i-track">#track</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+      <div id="fileindex-section" class="section project-section">
+        <h3 class="section-header">Files</h3>
+        <ul>
+        
+          <li class="file"><a href="../Readme_rdoc.html">Readme.rdoc</a></li>
+        
+        </ul>
+      </div>
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class/Module Index
+          <span class="search-toggle"><img src="../images/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <ul class="link-list">
+        
+          <li><a href="../Mixpanel.html">Mixpanel</a></li>
+        
+          <li><a href="../Mixpanel/BufferedConsumer.html">Mixpanel::BufferedConsumer</a></li>
+        
+          <li><a href="../Mixpanel/ConnectionError.html">Mixpanel::ConnectionError</a></li>
+        
+          <li><a href="../Mixpanel/Consumer.html">Mixpanel::Consumer</a></li>
+        
+          <li><a href="../Mixpanel/Events.html">Mixpanel::Events</a></li>
+        
+          <li><a href="../Mixpanel/People.html">Mixpanel::People</a></li>
+        
+          <li><a href="../Mixpanel/People/PeopleDate.html">Mixpanel::People::PeopleDate</a></li>
+        
+          <li><a href="../Mixpanel/Tracker.html">Mixpanel::Tracker</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+
+      
+    </div>
+  </div>
+
+  <div id="documentation">
+    <h1 class="class">Mixpanel::Events</h1>
+
+    <div id="description" class="description">
+      
+<p>Handles formatting <a href="../Mixpanel.html">Mixpanel</a> event tracking
+messages and sending them to the consumer. <a
+href="Tracker.html">Mixpanel::Tracker</a> is a subclass of this class, and
+the best way to track events is to instantiate a <a
+href="Tracker.html">Mixpanel::Tracker</a></p>
+
+<pre>tracker = Mixpanel::Tracker.new # Has all of the methods of Mixpanel::Event
+tracker.track(...)</pre>
+
+    </div><!-- description -->
+
+    
+    
+    
+    <div id="5Buntitled-5D" class="documentation-section">
+      
+
+      
+
+      
+
+      
+
+      <!-- Methods -->
+      
+      <div id="public-class-method-details" class="method-section section">
+        <h3 class="section-header">Public Class Methods</h3>
+
+      
+        <div id="new-method" class="method-detail ">
+          <a name="method-c-new"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">new</span><span
+              class="method-args">(token, &block)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>You likely won't need to instantiate an instance of <a
+href="Events.html">Mixpanel::Events</a> directly. The best way to get an
+instance is to use <a href="Tracker.html">Mixpanel::Tracker</a></p>
+
+<pre># tracker has all of the methods of Mixpanel::Events
+tracker = Mixpanel::Tracker.new(...)</pre>
+            
+
+            
+            <div class="method-source-code" id="new-source">
+<pre>
+<span class="ruby-comment"># File lib/mixpanel-ruby/events.rb, line 23</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">token</span>, &amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-ivar">@token</span> = <span class="ruby-identifier">token</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">block</span>
+    <span class="ruby-ivar">@sink</span> = <span class="ruby-identifier">block</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">consumer</span> = <span class="ruby-constant">Consumer</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-ivar">@sink</span> = <span class="ruby-identifier">consumer</span>.<span class="ruby-identifier">method</span>(<span class="ruby-value">:send</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- new-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- new-method -->
+
+      
+      </div><!-- public-class-method-details -->
+    
+      <div id="public-instance-method-details" class="method-section section">
+        <h3 class="section-header">Public Instance Methods</h3>
+
+      
+        <div id="track-method" class="method-detail ">
+          <a name="method-i-track"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">track</span><span
+              class="method-args">(distinct_id, event, properties={}, ip=nil)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Notes that an event has occurred, along with a distinct_id representing the
+source of that event (for example, a user id), an event name describing the
+event and a set of properties describing that event. Properties are
+provided as a Hash with string keys and strings, numbers or booleans as
+values.</p>
+
+<pre>tracker = Mixpanel::Tracker.new
+
+# Track that user &quot;12345&quot;'s credit card was declined
+tracker.track(&quot;12345&quot;, &quot;Credit Card Declined&quot;)
+
+# Properties describe the circumstances of the event,
+# or aspects of the source or user associated with the event
+tracker.track(&quot;12345&quot;, &quot;Welcome Email Sent&quot;, {
+    'Email Template' =&gt; 'Pretty Pink Welcome',
+    'User Sign-up Cohort' =&gt; 'July 2013'
+})</pre>
+            
+
+            
+            <div class="method-source-code" id="track-source">
+<pre>
+<span class="ruby-comment"># File lib/mixpanel-ruby/events.rb, line 50</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">track</span>(<span class="ruby-identifier">distinct_id</span>, <span class="ruby-identifier">event</span>, <span class="ruby-identifier">properties</span>={}, <span class="ruby-identifier">ip</span>=<span class="ruby-keyword">nil</span>)
+  <span class="ruby-identifier">properties</span> = {
+      <span class="ruby-string">'distinct_id'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">distinct_id</span>,
+      <span class="ruby-string">'token'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@token</span>,
+      <span class="ruby-string">'time'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>.<span class="ruby-identifier">to_i</span>,
+      <span class="ruby-string">'mp_lib'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'ruby'</span>,
+      <span class="ruby-string">'$lib_version'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-constant">Mixpanel</span><span class="ruby-operator">::</span><span class="ruby-constant">VERSION</span>
+  }.<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">properties</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">ip</span>
+    <span class="ruby-identifier">properties</span>[<span class="ruby-string">'ip'</span>] = <span class="ruby-identifier">ip</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">message</span> = {
+      <span class="ruby-string">'event'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">event</span>,
+      <span class="ruby-string">'properties'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">properties</span>
+  }
+
+  <span class="ruby-ivar">@sink</span>.<span class="ruby-identifier">call</span>(<span class="ruby-value">:event</span>, <span class="ruby-identifier">message</span>.<span class="ruby-identifier">to_json</span>)
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- track-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- track-method -->
+
+      
+      </div><!-- public-instance-method-details -->
+    
+    </div><!-- 5Buntitled-5D -->
+  
+
+  </div><!-- documentation -->
+
+  <div id="validator-badges">
+    <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+    <p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+      Rdoc Generator</a> 2</small>.</p>
+  </div>
+
+</body>
+</html>
+
