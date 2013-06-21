@@ -69,6 +69,8 @@
           
           <li><a href="#method-i-alias">#alias</a></li>
           
+          <li><a href="#method-i-track">#track</a></li>
+          
         </ul>
       </div>
       
@@ -281,7 +283,7 @@ service, regardless of how the tracker is configured.</p>
             
             <div class="method-source-code" id="alias-source">
 <pre>
-<span class="ruby-comment"># File lib/mixpanel-ruby/tracker.rb, line 58</span>
+<span class="ruby-comment"># File lib/mixpanel-ruby/tracker.rb, line 81</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">alias</span>(<span class="ruby-identifier">alias_id</span>, <span class="ruby-identifier">real_id</span>, <span class="ruby-identifier">events_endpoint</span>=<span class="ruby-keyword">nil</span>)
   <span class="ruby-identifier">consumer</span> = <span class="ruby-constant">Mixpanel</span><span class="ruby-operator">::</span><span class="ruby-constant">Consumer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">events_endpoint</span>)
   <span class="ruby-identifier">message</span> = {
@@ -301,6 +303,57 @@ service, regardless of how the tracker is configured.</p>
 
           
         </div><!-- alias-method -->
+
+      
+        <div id="track-method" class="method-detail ">
+          <a name="method-i-track"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">track</span><span
+              class="method-args">(distinct_id, event, properties={}, ip=nil)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Notes that an event has occurred, along with a distinct_id representing the
+source of that event (for example, a user id), an event name describing the
+event and a set of properties describing that event. Properties are
+provided as a Hash with string keys and strings, numbers or booleans as
+values.</p>
+
+<pre>tracker = Mixpanel::Tracker.new
+
+# Track that user &quot;12345&quot;'s credit card was declined
+tracker.track(&quot;12345&quot;, &quot;Credit Card Declined&quot;)
+
+# Properties describe the circumstances of the event,
+# or aspects of the source or user associated with the event
+tracker.track(&quot;12345&quot;, &quot;Welcome Email Sent&quot;, {
+    'Email Template' =&gt; 'Pretty Pink Welcome',
+    'User Sign-up Cohort' =&gt; 'July 2013'
+})</pre>
+            
+
+            
+            <div class="method-source-code" id="track-source">
+<pre>
+<span class="ruby-comment"># File lib/mixpanel-ruby/tracker.rb, line 65</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">track</span>(<span class="ruby-identifier">distinct_id</span>, <span class="ruby-identifier">event</span>, <span class="ruby-identifier">properties</span>={}, <span class="ruby-identifier">ip</span>=<span class="ruby-keyword">nil</span>)
+  <span class="ruby-comment"># This is here strictly to allow rdoc to include the relevant</span>
+  <span class="ruby-comment"># documentation</span>
+  <span class="ruby-keyword">super</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- track-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- track-method -->
 
       
       </div><!-- public-instance-method-details -->
